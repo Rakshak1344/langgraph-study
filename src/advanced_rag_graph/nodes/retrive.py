@@ -5,7 +5,7 @@ from src.advanced_rag_graph.ingestion import retriever
 from src.advanced_rag_graph.state import GraphState
 
 load_dotenv()
-
+# Retrieves relevant documents based on the question asked with similarity search by retriever
 def retrieve(state: GraphState) -> Dict[str, Any]:
     print("--- RETRIEVE---")
     question = state["question"]

@@ -1,3 +1,6 @@
+from pprint import pprint
+
+from src.advanced_rag_graph.chains.generation import generation_chain
 from src.advanced_rag_graph.chains.retrival_grader_chain import GradeDocuments, retrieval_grader
 from src.advanced_rag_graph.ingestion import retriever
 
@@ -22,3 +25,9 @@ def test_retrieval_grader_answer_no() -> None:
         {"question": "How to make pizza", "document": doc_txt}
     )
     assert res.binary_score == "no"
+
+def test_generation_chain() -> None:
+    question = "agent memory"
+    docs = retriever.invoke(question)
+    generation = generation_chain.invoke({"question": question, "context": docs})
+    pprint(generation)
