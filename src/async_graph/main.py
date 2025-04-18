@@ -8,6 +8,7 @@ import  operator
 
 class State(TypedDict):
     aggregate: Annotated[list, operator.add]
+    ## Which can be used to decide which node should be used next
     which: str
 
 class ReturnNodeValue:
