@@ -3,13 +3,13 @@ name = "langgraph-study"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Rakshak1344",email = "dev.rakshith14@gmail.com"}
+    { name = "Rakshak1344", email = "dev.rakshith14@gmail.com" }
 ]
 readme = "README.md"
 requires-python = ">=3.9,<4.0"
 packages = [
-    { include = "reactagent", from = "src" },
-    { include = "reflection_agent", from = "src" },
+    { include = "graph" },
+    { include = "advanced_rag_graph", from = "src" }
 ]
 dependencies = [
     "langgraph (>=0.3.25,<0.4.0)",

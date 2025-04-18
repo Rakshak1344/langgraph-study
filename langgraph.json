@@ -1,0 +1,9 @@
+{
+  "graphs": {
+    "agent": "./src/advanced_rag_graph/graph.py:app"
+  },
+  "env": ".env",
+  "dependencies": [
+    "."
+  ]
+}
