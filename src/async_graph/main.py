@@ -21,17 +21,25 @@ class ReturnNodeValue:
 
 
 builder = StateGraph(State)
+# NODES
 builder.add_node("a", ReturnNodeValue("I'm A"))
-
 builder.add_node("b", ReturnNodeValue("I'm B"))
+builder.add_node("b2", ReturnNodeValue("I'm B2"))
 builder.add_node("c", ReturnNodeValue("I'm C"))
 builder.add_node("d", ReturnNodeValue("I'm D"))
 
+# EDGES
 builder.add_edge(START, "a")
 builder.add_edge("a", "b")
 builder.add_edge("a", "c")
-builder.add_edge("b", "d")
-builder.add_edge("c", "d")
+builder.add_edge("b", "b2")
+
+## Multiple edges at once i.e creates b2->d, and c->d.
+## builder.add_edge("b2", "d")
+## builder.add_edge("c", "d")
+##This avoids writing multiple lines
+builder.add_edge(["b2","c"], "d")
+
 builder.add_edge("d", END)
 
 graph = builder.compile()
