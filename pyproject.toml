@@ -7,10 +7,7 @@ authors = [
 ]
 readme = "README.md"
 requires-python = ">=3.9,<4.0"
-packages = [
-    { include = "graph" },
-    { include = "advanced_rag_graph", from = "src" }
-]
+
 dependencies = [
     "langgraph (>=0.3.25,<0.4.0)",
     "isort (>=6.0.1,<7.0.0)",
@@ -31,3 +28,8 @@ dependencies = [
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+packages = [
+    { include = "advanced_rag_graph", from = "src" }
+]
